@@ -1,0 +1,690 @@
+* :before, :after{
+    /* margin: 0; */
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+@font-face {
+    font-family: 'Mercedes';
+    src: url(../font/DaimlerCAC-Regular.woff2) format(woff2);
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font: 200 18px/1.3 'Mercedes';
+    color: #fff;  
+    background-color: #000;  
+    max-width: 1920px;  
+    margin: 0 auto; 
+   
+}
+
+
+
+.header {
+    background-color: #000;
+    width: 100%;
+    top: -200px;
+    left: 0;
+    z-index: 1000;
+    transition: all 1s ease;
+}
+
+.header.fixed {
+    position: fixed;
+    transform: translateY(200px);
+}
+
+.upper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 100%;
+    height: 50px; 
+}
+
+.caption {
+    letter-spacing: 0.5px;
+    color: rgb(229, 230, 231);
+    margin:7px 0 0 0;
+    text-align: center;
+    font-weight: 300;
+}
+
+.navi {
+    width: 100%;    
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; 
+    margin: 0 15%;
+    padding-bottom: 10px;     
+}
+
+.menu.active {
+    transform: translateX(0);
+    width: 100vw;
+    height: 70vh;  
+    z-index: 100;    
+}
+ 
+.menu_burger {
+	width: 30px;
+	height: 30px;
+	position: relative;
+    z-index:2;
+	overflow: hidden;
+    display: none;
+}
+
+.menu_burger span {
+	width: 30px;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);    
+	background-color: white; 
+	transition: all 0.5s;
+}
+
+.menu_burger span:nth-of-type(2) {
+	top: calc(50% - 10px);
+}
+.menu_burger span:nth-of-type(3) {
+	top: calc(50% + 10px);
+}
+
+.menu a{
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(146, 150, 150); 
+    align-items: center;  
+}
+
+.menu a:hover {
+    color: #fff;
+    transition: color 0.7s ease 0s;
+}
+
+.preview {
+    background-image: url(../image/legendarny_mercedes_benz_gullwing.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 720px;
+    background-color: #fff;
+    position: relative;
+}
+
+.text {    
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: left;    
+    max-width: 300px;
+    height: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    animation: enter 3s 1;    
+}
+
+@keyframes enter {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+h3.legenda {
+    margin-top: 0;
+    font: 100 1.7em/1.7 'Mercedes';    
+}
+
+p.success {
+    font-size: 1.5em;
+}
+
+.animation_block {
+    height: 300px;   
+    text-align: center;
+    font: 100 46px/1.3 'Mercedes';    
+}
+
+._anim-items {
+    transform: translate(0px, 120%);
+    opacity:0;
+    transition: all 1s ease 0s;
+}
+
+._anim-items._active {
+    transform: translate(0px, 0px);
+    opacity: 1;   
+}
+
+div.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50%);
+    /* grid-gap: 0 0; */
+    background-color: #000;  
+    font-size: 24px;   
+}
+
+.text_block {
+    text-indent: 15px;
+    animation: enter 3s 1;
+    padding-left: 25px;
+    padding-right: 25px;   
+}
+
+.block2 {
+    background-image: url(../image/donor.jpg);
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;    
+}
+
+.block3 {
+    background-image: url(../image/wing1952else.jpg);
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+
+.block6 {
+    background-image: url(../image/wing1952.jpg);
+    object-fit: cover;
+    background-position:center;
+    background-size: cover;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 100px;   
+}
+
+.footer_link {
+    color: #fff; 
+    padding-left: 25px;   
+}
+
+.footer_link:hover {
+    color: rgb(166, 166, 248);
+}
+
+.social_logo {
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+.follow_mb {
+    font-size: 3rem;
+}
+
+ul.social_logo li > a {
+    color: #fff;   
+    margin-left: 20px;      
+}
+
+ul.social_logo li > a:hover {
+    color: rgb(166, 166, 248);          
+}
+
+.form {
+    max-width: 200px;
+    justify-content: flex-end;
+    font-size: 14px;
+    padding-right: 15px;   
+}
+
+.button {
+    cursor: pointer;
+    background-color: #000;
+    border: 2px solid #fff;    
+    font: 400 14px/1.3 'Mercedes';
+    color: #fff;
+    height: 30px;
+    width: 100%;    
+}
+
+.button:active {
+    transform: scale(0.9);
+}
+
+.engine {
+    background-image: url(../image/motor.jpg);
+}
+
+.wings {
+    background-image: url(../image/gullwinginmuseum.jpg);
+}
+
+.chassis {
+    background-image: url(../image/amortizator300sl.jpg);
+}
+
+.tires {
+    background-image: url(../image/rezina300sl.jpg);
+}
+
+.development_blocks div {    
+    position: relative;
+    min-height: 450px;    
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    margin: 40px 0;   
+}
+
+.development_blocks div:hover {    
+    animation: enter 3s 1;
+}
+  
+.hidden {  
+    max-width: 100%;
+    font-size: 20px;    
+    margin: 0;
+    opacity: 0;  
+    padding: 10px 30px 20px 30px;  
+    text-indent: 25px;    
+}
+
+
+.develop > .link_for_block, h4 {
+    font-size: 40px;
+    color: #fff;
+    letter-spacing: 1.5px;    
+    max-height: 100%;   
+    text-align: center;   
+}
+
+.link_for_block {
+    border: 3px solid white;
+    text-decoration: none;
+    margin-left: calc(50% - 140px);
+    padding: 20px; 
+    background-color: rgba(223, 221, 221, 0.5); 
+}
+
+.link_for_block:hover {
+    cursor: pointer;
+}
+
+.link_for_block:active {
+    background-color:  rgb(223, 221, 221);
+}
+
+.appearance_1952 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(650px,auto));        
+}
+
+h1.total_look {
+    font-size: 50px;
+    font-weight: 200;
+    text-align: center;
+    align-self: center;
+}
+
+.text_block_appearance1 {
+    text-indent: 25px;
+    font-weight: 300;
+    padding: 30px;    
+}
+
+.wrapper {
+    padding: 30px;
+    min-height: 100%;
+}    
+
+.image-slider {
+    padding: 30px 0 70px 0;    
+}
+
+/* .image-slider_wrapper {
+}
+
+.image-slider_slide {
+} */
+
+.image-slider_image {
+    text-align: center;
+}
+
+.image-slider_image img {
+    max-width: 100%;
+}
+
+.image-slider .swiper-button-next::after,
+.image-slider .swiper-button-prev::after {
+    color: #fff;
+    font-size: 50px;
+}
+
+.image-slider .swiper-pagination {
+    bottom: 0;
+}
+
+.image-slider .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    line-height: 20px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.museum_preview {
+    background-image: url(../image/museum.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    position: relative;       
+}
+
+.gradient {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.9) 80%, rgba(177, 175, 175, 0));
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 50%;
+    height: 500px; 
+}
+
+.title_museum {
+    font: 300 36px/1.4 'Mercedes';
+    margin: 7px auto;
+    text-align: center;
+    animation: enter 3s 1;
+    margin-top: 80px;    
+}
+
+.item_museum {
+    font: 400 18px/1.4 'Mercedes';
+    padding: 0 30px 10px 20px;
+    text-align: center;
+    text-indent: 15px;
+    animation: enter 3s 1;
+      
+}
+
+.about_museum {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    margin-top: 30px;   
+}
+
+.time_work, .location {
+    border-right: 1px solid white;
+    color: #fff;
+}
+
+.map {
+   width: 100%;
+   min-width: 100px;
+   height: 100%;
+   opacity: .4;
+}
+
+div.about_museum div {  
+   padding: 0 10px;
+}
+
+.second_museum {
+    background-image: url(../image/jordanian_fairy_tail_2_001.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    position: relative; 
+    margin-top: 40px;      
+}
+
+.gradient_two {
+    background: linear-gradient(to right,rgba(0, 0, 0, 0.9) 80%, rgba(177, 175, 175, 0));
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 50%;
+    height: 100%; 
+}
+
+.ihfo-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, auto));
+}
+
+.fixed_image {
+    background-image: url(../image/3.1.1.1.45.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 400px;
+}
+
+.three {
+    margin-top: 80px;
+    background-color: black;
+    color: white;
+    text-indent: 20px;
+    padding: 20px;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,auto));
+    grid-gap: 20px;  
+    margin-bottom: 20px;    
+}
+
+div.info-cards p{
+    padding: 15px;
+}
+
+.item img{
+    padding-top: 20px;  
+}
+
+.item {
+    border: 0.5px solid black;
+    box-shadow: 7px 7px 5px rgb(170, 169, 169);
+    border-radius: 20px;
+    margin-top: 40px;
+}
+
+.preview_race_image {
+    background-image: url(../image/preview_race.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 620px;
+    position: relative;
+}
+
+.legenda_race {
+    position: absolute;
+    font: 300 3em/1.5 'Mercedes';    
+    animation: enter 3s 1;
+    top: 130px;
+    left: 120px;
+}
+
+.text_items {
+    display: flex;
+    font: 200 50px/1.7 'Mercedes';
+    width: 100%;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 8px;
+}
+
+.wrap_items_race {   
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+   justify-content: space-around;  
+   min-height: 70vh;   
+   background: linear-gradient(to top,rgba(199, 197, 197, 0.9) 40%, rgba(243, 241, 241, 0));  
+   /* background-color: rgb(207, 206, 206);  */
+   column-gap: 30px;
+  
+}
+
+.race_items {
+    padding: 0 15px 10px 15px;
+}
+
+a.link_for_race img {
+    border: 1px solid rgb(194, 191, 191);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 30px;
+    object-fit: cover;   
+}
+
+a.link_for_race img:hover {
+    cursor: pointer;
+    transform: scale(1.05);  
+    box-shadow: 7px 7px 6px rgb(196, 195, 192);  
+}
+
+a.link_for_race img:active {
+    transform: scale(0.9);
+}
+
+.hidden_race {
+    color: black;    
+    font: 400 22px/1.2 'Mercedes';
+    text-align: center;
+    text-indent: 15px; 
+    display: none;      
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: center;
+    align-items: center;    
+}
+
+.video_race {
+    height: 50vh;
+    width: 50%;
+}
+
+
+@media screen and (min-width: 720px) and (max-width: 920px) {
+    p.text_block {
+        font-size: 16px;    
+    }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: fixed;
+        top: 120px;
+        margin: 0 auto;              
+        padding: 0;
+        background: rgba(114, 112, 112, 0.95);
+        transform: translateX(-200%);
+        transition: transform .5s; 
+    }    
+    .menu_burger {
+        display: block;
+        margin-right: 0;
+    }
+   
+    ul.menu.active a{
+        color: rgb(189, 187, 187);
+        font-size: 26px;
+        text-decoration: underline; 
+        margin: 10px auto;                 
+    }   
+
+    .preview {
+        background-image: url(../image/legendarnyj_mercedes_benz_gullwing2.jpg);
+    }
+    p.text_block {
+        font-size: 12px;    
+    }
+    .title_history {
+        font-size: 36px;
+    }
+    .text {
+        top: 40px;
+        left: 30px
+    }
+    .hidden {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .development_blocks div {
+        min-height: 300px;
+    }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 550px) {
+    div.content {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 200px 200px 1fr 1fr 200px;     
+    }
+    .block3 {
+        grid-row: 4;
+    }
+    .block4 {
+        grid-row: 3;
+    }
+    span.follow_mb {
+        font-size: 2rem;
+    }
+    
+
+
+
+    /* .engine {
+        background-image: url(../image/motor2.jpg);
+    }
+    
+    .wings {
+        background-image: url(../image/gullwinginmuseum3.jpg);
+    }
+    
+    .chassis {
+        background-image: url(../image/amortizator300sl2.jpg);
+    }
+    
+    .tires {
+        background-image: url(../image/rezina300sl2.jpg);
+    } */
+} 
+
+
+
+
+
+
+
