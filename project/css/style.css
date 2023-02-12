@@ -1,0 +1,783 @@
+*, :before, :after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'Mercedes';
+    src: url(../font/DaimlerCAC-Regular.woff2) format(woff2);
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --font: 'Mercedes';
+}
+
+:root {
+    --background-color: #000;
+}
+
+:root {
+    --color: #fff;
+}
+
+html {
+    font: 200 18px/1.3 var(--font);
+    color: var(--color);  
+    background-color: var(--background-color);  
+    max-width: 1920px;  
+    margin: 0 auto;  
+}
+
+.header {
+    background-color: var(--background-color);
+    width: 100%;
+    top: -170px;
+    left: 0;
+    z-index: 1000;
+    transition: all 1s ease;
+}
+
+.header.fixed {
+    position: fixed;
+    transform: translateY(170px);
+}
+
+.upper {
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    height: 70px;     
+}
+
+.caption {
+    letter-spacing: 0.5px;
+    color: rgb(229, 230, 231);    
+    text-align: center;
+    font-weight: 300;
+}
+
+.navi {
+    width: 100%;    
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; 
+    margin: 0 15%;
+    padding-bottom: 15px; 
+    padding-top: 8px;    
+}
+
+.menu.active {
+    position: fixed;
+    transform: translateX(0);
+    top: 105.09px;
+    width: 100vw;
+    height: 70vh;  
+    z-index: 100;    
+}
+ 
+.menu_burger {
+	width: 30px;
+	height: 30px;
+	position: relative;
+    z-index: 2;	    
+    opacity: 0;
+    margin: 5px 0 0 8px;
+}
+
+.no_show {
+    width: 30px;
+	height: 30px;
+    opacity: 0;
+}
+
+.menu_burger span {
+	width: 30px;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);    
+	background-color: white; 
+	transition: all 0.5s;
+}
+
+.menu_burger span:nth-of-type(2) {
+	top: calc(50% - 10px);
+}
+.menu_burger span:nth-of-type(3) {
+	top: calc(50% + 10px);
+}
+
+.menu a{
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(146, 150, 150); 
+    align-items: center;  
+}
+
+.menu a:hover {
+    color: var(--color);
+    transition: color 0.7s ease 0s;
+}
+
+.preview {
+    background-image: url(../image/legendarny_mercedes_benz_gullwing.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+    background-color: #fff;
+    position: relative;
+}
+
+.text {    
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: left;    
+    max-width: 300px;
+    height: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    animation: enter 3s 1;    
+}
+
+@keyframes enter {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.legenda {
+    margin-top: 0;
+    font: 500 50px/1.7 var(--font);    
+}
+
+.success {
+    font-size: 1.8em;
+}
+
+.animation_block {
+    height: 300px;   
+    text-align: center;
+    margin: 50px 0;       
+}
+ 
+.title_history {
+    font: 200 80px/2 var(--font);    
+}
+
+._anim-items {
+    transform: translate(0px, 70%);
+    opacity:0;
+    transition: all 1s ease 0s;
+}
+
+._anim-items._active {
+    transform: translate(0px, 0px);
+    opacity: 1;   
+}
+
+div.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50%);
+    grid-template-rows: 400px 400px 400px;
+    font-size: 24px;   
+}
+
+.text_block {
+    text-indent: 15px;
+    animation: enter 3s 1;
+    padding: 15px 25px;   
+}
+
+.block2 {
+    background-image: url(../image/donor.jpg);
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;    
+}
+
+.block3 {
+    background-image: url(../image/wing1952else.jpg);
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+
+.block6 {
+    background-image: url(../image/wing1952.jpg);
+    object-fit: cover;
+    background-position:center;
+    background-size: cover;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 100px 0;   
+}
+
+.footer_link {
+    color: var(--color); 
+    padding-left: 15px;   
+}
+
+.footer_link:hover {
+    color: rgb(166, 166, 248);
+}
+
+.social_logo {
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+.follow_mb {
+    font-size: 2.75rem;
+    padding: 0 15px;
+}
+
+ul.social_logo li > a {
+    color: var(--color);   
+    margin-left: 20px;      
+}
+
+ul.social_logo li > a:hover {
+    color: rgb(166, 166, 248);          
+}
+
+.form {
+    max-width: 200px;
+    justify-content: flex-end;
+    font-size: 14px;
+    padding: 0 15px;  
+}
+
+.button {
+    cursor: pointer;
+    background-color: var(--background-color);
+    border: 2px solid #fff;    
+    font: 400 14px/1.3 var(--font);
+    color: var(--color);
+    height: 30px;
+    width: 100%;    
+}
+
+.button:active {
+    transform: scale(0.9);
+}
+
+.engine {
+    background-image: url(../image/motor.jpg);
+}
+
+.wings {
+    background-image: url(../image/gullwinginmuseum.jpg);
+}
+
+.chassis {
+    background-image: url(../image/amortizator300sl.jpg);
+}
+
+.tires {
+    background-image: url(../image/rezina300sl.jpg);
+}
+
+.development_blocks div { 
+    display: flex;
+    flex-direction: column;  
+    position: relative;
+    min-height: 450px;    
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    margin: 50px 0;   
+}
+
+.development_blocks div:hover {    
+    animation: enter 3s 1;
+}
+  
+.hidden {  
+    display: none;
+    max-width: 100%;
+    font-size: 20px;    
+    margin: 0;    
+    padding: 30px;  
+    text-indent: 25px;    
+}
+
+.develop > .link_for_block, h4 {    
+    font-size: 50px;
+    color: var(--color);
+    letter-spacing: 3px;   
+    text-align: center;    
+}
+
+.develop h4 {
+    padding-top: 100px;
+}
+
+.link_for_block {
+    display: flex;
+    justify-content: center;   
+    border: 3px solid #fff;
+    text-decoration: none;
+    margin: 20px 30%;
+    padding: 20px; 
+    background-color: rgba(223, 221, 221, 0.5); 
+}
+
+.link_for_block:hover {
+    cursor: pointer;
+}
+
+.link_for_block:active {
+    background-color:  rgb(223, 221, 221);
+}
+
+.wrapper {
+    padding: 30px;
+    min-height: 100%;    
+}    
+
+.image-slider {
+    padding: 30px 0;    
+}
+
+.image-slider_image {
+    text-align: center;
+}
+
+.image-slider_image img {
+    max-width: 100%; 
+    border: 2px solid rgb(14, 62, 107);
+    border-radius: 10px;
+    padding: 10px;   
+}
+
+.image-slider .swiper-button-next::after,
+.image-slider .swiper-button-prev::after {
+    color: var(--color);
+    font-size: 30px;
+}
+
+.pagination {
+    margin-left: 49%;  
+}
+
+.swiper-pagination-bullet {
+    width: 16px!important;
+    background-color: #fff!important;
+    height: 16px!important;
+    display: block;
+    font-size: 16px;   
+}
+
+.slider {
+    background-image: url(../image/black_bg.jpg);
+    background-position: center;
+    background-size: cover;    
+}
+
+.interier {
+    margin: 90px 5%;
+}
+
+.interier_item {
+    display: flex; 
+    flex-wrap: wrap;  
+    margin-bottom: 60px;
+    border: 7px solid rgb(212, 146, 23);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.wrap_text {
+    padding: 30px;
+    width: 20%;
+    border: 2px solid rgb(14, 62, 107);
+    border-radius: 10px;
+    margin-left: 30px;
+    text-indent: 20px;
+}
+
+.img {
+    border-radius: 10px;
+    object-fit: cover;
+    max-width: 45%;
+    margin-left: 60px;
+}
+
+.interier_item:nth-child(2n) {
+    justify-content: end;
+}
+
+.preview_race_image {
+    background-image: url(../image/preview_race.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 620px;
+    position: relative;
+}
+
+.legenda_race {
+    position: absolute;
+    font: 400 70px/1.5 var(--font);
+    animation: enter 3s 1;
+    text-align: left;
+    top: 60px;
+    left: 60px;
+}
+
+.racing_items {
+    background-image: url(../image/carbon-background.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.text_items {
+    font: 500 70px/1.5 var(--font);
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    padding-top: 10%;
+    letter-spacing: 6px;    
+}
+
+.wrap_items_race {  
+   display: flex;  
+   justify-content: center;
+   flex-wrap: wrap;
+   min-height: 50vh;   
+}
+
+.race_items {
+    width: 200px;
+    padding: 20px 15px;
+}
+
+a.link_for_race img {
+    border: 1px solid rgb(194, 191, 191);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover; 
+    margin: 10px 25px;   
+}
+
+a.link_for_race img:hover {
+    cursor: pointer;
+    transform: scale(1.05);  
+    box-shadow: 7px 7px 6px rgb(196, 195, 192);  
+}
+
+a.link_for_race img:active {
+    transform: scale(0.9);
+}
+
+.hidden_race {
+    color: var(--color);    
+    font: 600 22px/1.2 var(--font);
+    text-align: center;
+    text-indent: 15px; 
+    display: none;      
+    border: 2px solid rgb(87, 84, 84);
+    border-radius: 5px;
+}
+
+.video_race {
+    margin: 80px 0;
+    display: flex; 
+    flex-direction: column;   
+    justify-content: center;
+    border-top: 1px solid rgb(136, 133, 133);
+}
+
+.video_youtube {
+    padding-top: 50px;
+    height: 50vh;
+    width: 50%;
+    margin-left: 25%;       
+}
+
+.museum_preview, .second_museum {
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    position: relative; 
+}
+
+.museum_preview {
+    background-image: url(../image/museum.jpg);         
+}
+
+.gradient, .gradient_two {
+    position: absolute;
+    top: 0;
+    width: 50%;
+} 
+
+.gradient {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.9) 80%, rgba(177, 175, 175, 0));
+    right: 0;    
+    height: 500px; 
+}
+
+.title_museum {
+    font: 100 70px/4 var(--font);
+    text-align: center;
+    animation: enter 3s 1;       
+}
+
+.item_museum {
+    font: 400 26px/1.2 var(--font);
+    padding: 20px 30px 10px 20px;
+    text-align: right;
+    text-indent: 25px;
+    height: 90%;
+    animation: enter 3s 1;
+    overflow: hidden;    
+}
+
+.museum_video {
+    margin-top: 100px;
+    display: flex;
+    width: 100%;   
+    height: 400px;
+    justify-content: center;
+}
+
+.gradient_two > .item_museum {
+    text-align: left;
+}
+
+.about_museum {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    margin: 60px 0;   
+}
+
+.time_work, .location {
+    border-right: 1px solid white;    
+}
+
+.map {
+   width: 100%;
+   min-width: 100px;
+   height: 100%;
+   opacity: .4;
+}
+
+div.about_museum div {  
+   padding: 10px;
+}
+
+.second_museum {
+    background-image: url(../image/jordanianmuseum.jpg);
+    margin-top: 40px;      
+}
+
+.gradient_two {
+    background: linear-gradient(to right,rgba(0, 0, 0, 0.9) 80%, rgba(177, 175, 175, 0));
+    left: 0;    
+    height: 100%; 
+}
+
+.ihfo-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, auto));    
+}
+
+.fixed_image {
+    background-image: url(../image/3.1.1.1.45.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 400px;
+}
+
+.three {
+    margin-top: 80px;
+    text-indent: 20px;
+    padding: 20px;
+}
+
+.three h4 {
+    margin-bottom: 40px;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,auto));
+    grid-gap: 30px;  
+    margin-bottom: 40px;    
+}
+
+div.info-cards p{
+    padding: 15px;
+}
+
+.item img{
+    padding-top: 20px;  
+}
+
+.info-cards .item {
+    border: 0.5px solid black;
+    box-shadow: 7px 7px 5px rgb(170, 169, 169);
+    border-radius: 20px;    
+}
+
+@media screen and (min-width: 1156px) and (max-width: 1450px) {
+    .item_museum {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1155px) {
+    p.text_block {
+        font-size: 16px;    
+    }  
+    .item_museum {
+        font-size: 20px;
+    }
+    .gradient, .gradient_two {
+        width: 70%;
+    }
+    .title_museum {
+    font: 100 60px/2 var(--font);
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: fixed;
+        top: 120px;
+        margin: 0 auto;              
+        padding: 30px 0;
+        background:rgba(0, 0, 0, 0.9);
+        transform: translateX(-200%);
+        transition: transform .5s; 
+    }    
+    .menu_burger {
+        opacity: 1;        
+    }   
+    ul.menu.active a{
+        color: rgb(189, 187, 187);
+        font-size: 26px;
+        margin: 15px auto;                        
+    }      
+    .preview {
+        background-image: url(../image/legendarnyj_mercedes_benz_gullwing2.jpg);
+    }
+    p.text_block {
+        font-size: 12px; 
+        padding: 15px;   
+    }
+    .title_history {
+        font-size: 46px;
+    }
+    .text {
+        top: 40px;
+        left: 30px
+    }
+    .hidden {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .development_blocks div {
+        min-height: 300px;
+    }
+    .develop > .link_for_block, h4 {
+        font-size: 40px;
+        letter-spacing: 1px;
+    }
+    .link_for_block {
+        margin: 30px 10%;
+    }
+    .develop h4 {
+        padding-top: 50px;
+    }
+    .item_museum {
+        font-size: 20px;
+    }
+    .gradient, .gradient_two {
+        width: 90%;
+    }
+    .title_museum {
+        font: 100 40px/1.5 var(--font);
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 550px) {
+    div.content {
+    grid-template-columns: 100%;
+    grid-template-rows: 220px 220px 220px 220px 220px 220px;         
+    }     
+    .legenda {
+        font-size: 40px;
+    }
+    .success {
+        font-size: 1.5em;
+    }
+    .block3 {
+        grid-row: 4;
+    }
+    .block4 {
+        grid-row: 3;
+    }
+    span.follow_mb {
+        font-size: 2rem;
+    }  
+    .item_museum {
+        font-size: 14px;
+    } 
+    .legenda_race {
+        font: 400 50px/1.5 var(--font);
+        left: 40px;
+    }
+    .text_items {
+        font: 500 50px/1.4 var(--font);
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none!important;
+    }
+    .interier_item {
+        display: block;
+    }
+    .wrap_text {       
+        border: none;
+    }
+}    
+
+@media screen and (min-width: 620px) and (max-width: 940px) {
+    .info-cards {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: 30px 15%;
+    }
+}
